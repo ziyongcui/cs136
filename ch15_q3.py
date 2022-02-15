@@ -191,9 +191,16 @@ def mm_alg():
 # run the algorithm on the 2009 F1 data
 final_scores = mm_alg()
 
-# sort the scores to get the winning drivers and get their original ids
+# print out the final scores and then again in sorted order
+print('final scores:')
+print(final_scores)
+print('final scores in descending order:')
+print(sorted(final_scores, reverse=True))
+
+# sort the scores to get the winning driver ids and get their original ids
 winning_drivers = np.argsort(final_scores)[::-1]
 winning_drivers_original_ids = [inverse_racers_dict[d] for d in winning_drivers]
 
 # print out names of drivers in final order
+print('final driver rankings:')
 print([driver_id_to_name[w] for w in winning_drivers_original_ids])
